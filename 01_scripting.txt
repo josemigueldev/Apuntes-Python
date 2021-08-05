@@ -1,0 +1,46 @@
+Primer acercamiento al Scripting
+================================================================================
+En programacion, un script es un archivo de codigo fuente con instrucciones
+sencillas, que puede ser ejecutado a traves de la linea de comandos.
+Se conoce como scripting a la tecnica de programacion empleada para crear este
+tipo de archivos.
+
+Para que un archivo de codigo fuente sea considerado un script, debe cumplir
+las siguientes caracteristicas:
+1. Ser ejecutable.
+2. Estar escrito en un lenguaje que pueda ser interpretado por el ordenador.
+3. No depender de otros archivos.
+
+Para que un archivo pueda ser ejecutado, hay que otorgarle permisos de ejecucion
+desde la linea de comandos se logra con: chmod +x nombre_del_archivo
+
+Para que el sistema operativo sepa que interprete utilizar para enterder y
+ejecutar el script, se debe colocar la ruta de dicho interprete en la primera
+linea del archivo, antecedida por los simbolos #! (hashbang o shebang)
+
+Dado que la ruta de un interprete puede ser distinta en los diversos sistemas
+operativos o distribuciones, realizar la llamada al interprete a traves de env,
+es una practica habitual:
+
+#!/usr/bin/env python3
+
+Por este motivo, un script no requiere de una extension para poder ser interpre-
+tado.
+
+Convertir un script en comando del sistema:
+archivo: hola-mundo.py
+
+#!/usr/bin/env python3
+print("Hola Mundo en Python3!")
+
+crear un archivo llamado hola-mundo.py, asignarle permisos de ejecucion y probar
+el script en la linea de comandos ejecutando la siguiente instruccion:
+./hola-mundo.py
+
+Ahora como root, copiar el archivo en la carpeta /usr/bin con el nombre
+hola-mundo:
+cp hola-mundo.py /usr/bin/hola-mundo
+
+El script esta ahora disponible para ser ejecutado como comando:
+usario@equipo:~$hola-mundo
+Hola Mundo en Python3!
