@@ -1,0 +1,26 @@
+ENTORNOS VIRTUALES
+================================================================================
+Instalamos PIP
+$ sudo apt-get install python3-pip
+
+Instalar virtualenv
+$ pip3 install virtualenv
+
+Si no reconoce en comando virtualenv agregar la ruta a .bashrc y .zshrc
+PATH="$PATH:$HOME/.local/bin"
+
+Crear entorno virtual
+$ virtualenv env => usara el python instalado por defecto en el sistema
+$ virtualenv env -p python3 => asignar que use python3
+
+Activar entorno virtual
+$ source env/bin/activate
+
+Desactivar entorno virtual
+$ deactivate
+
+Listar paquetes instalados
+$ pip3 freeze
+
+Instalar un paquete
+$ pip3 install Flask
